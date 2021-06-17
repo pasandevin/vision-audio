@@ -33,3 +33,12 @@ A gesture-controlled audio player built for the purpose of demonstrating the cap
 
 
 # How	to	play	with	Vision	Audio?
+
+The songs are already loaded but you can add a folder using *load songs* button. The player will load all the mp3 files in a given folder.
+
+### To Start/continue: Raise all five fingers
+### To pause: all the fingers
+###To change the volume: Raise your thumb and index finger and adjust the distance between them
+###To play the next track: Raise all the fingers except your thumb and move them to the right
+###To play the previous track: Raise all the fingers except your thumb and move them to the left
+
