@@ -88,10 +88,13 @@ class PlaybackDetector():
                 self.changeTrack()
 
             # call function for play pause
-            elif self.prevmode!= self.mode and self.mode=='Play' and self.app.paused== True:    #For continue
-                self.app.pause_song()
-            elif self.prevmode!= self.mode and self.mode=='Pause' and self.app.paused == False:      #For pause
-                self.app.pause_song()
+            else:
+                self.checkplaypause()
+    def checkplaypause(self):
+        if self.prevmode!= self.mode and self.mode=='Play' and self.app.paused== True:    #For continue
+            self.app.pause_song()
+        elif self.prevmode!= self.mode and self.mode=='Pause' and self.app.paused == False:      #For pause
+            self.app.pause_song()
 
     def changeVol(self,img):
         x1,y1= self.lmlist[4][1],self.lmlist[4][2]
