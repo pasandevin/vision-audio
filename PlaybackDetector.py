@@ -21,7 +21,7 @@ class PlaybackDetector():
         def inplayer():
             self.root = tk.Tk()
             self.root.geometry('600x400')
-            self.root.wm_title('Vision_Player')
+            self.root.wm_title('Vison Audio')
             self.app = Player.Player(master=self.root)
             self.app.mainloop()
 

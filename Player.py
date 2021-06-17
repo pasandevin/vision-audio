@@ -12,11 +12,11 @@ import threading
 
 class Player(tk.Frame):
     def __init__(self, master=None):
-        self.img = PhotoImage(file='images/music.gif')
-        self.next_i = PhotoImage(file='images/next.gif')
-        self.previ = PhotoImage(file='images/previous.gif')
-        self.playi = PhotoImage(file='images/play.gif')
-        self.pausei = PhotoImage(file='images/pause.gif')
+        self.img = PhotoImage(file='images/mainimg.png')
+        self.next_i = PhotoImage(file='images/next.png')
+        self.previ = PhotoImage(file='images/previous.png')
+        self.playi = PhotoImage(file='images/play.png')
+        self.pausei = PhotoImage(file='images/pause.png')
         super().__init__(master)
         self.master = master
         self.pack()
@@ -40,13 +40,13 @@ class Player(tk.Frame):
     def create_frames(self):
         self.track = tk.LabelFrame(self, text='Song Track',
                                    font=("times new roman", 15, "bold"),
-                                   bg="grey", fg="white", bd=5, relief=tk.GROOVE)
+                                   bg="green2", fg="white", bd=5, relief=tk.GROOVE)
         self.track.config(width=410, height=300)
         self.track.grid(row=0, column=0, padx=10)
 
         self.tracklist = tk.LabelFrame(self, text=f'PlayList - {str(len(self.playlist))}',
                                        font=("times new roman", 15, "bold"),
-                                       bg="grey", fg="white", bd=5, relief=tk.GROOVE)
+                                       bg="green2", fg="white", bd=5, relief=tk.GROOVE)
         self.tracklist.config(width=190, height=400)
         self.tracklist.grid(row=0, column=1, rowspan=3, pady=5)
 
@@ -62,13 +62,13 @@ class Player(tk.Frame):
         self.canvas.grid(row=0, column=0)
 
         self.songtrack = tk.Label(self.track, font=("times new roman", 16, "bold"),
-                                  bg="white", fg="dark blue")
-        self.songtrack['text'] = 'Musicxy MP3 Player'
+                                  bg="green2", fg="dark blue")
+        self.songtrack['text'] = 'Vision Audio'
         self.songtrack.config(width=30, height=1)
         self.songtrack.grid(row=1, column=0, padx=10)
 
     def control_widgets(self):
-        self.loadSongs = tk.Button(self.controls, bg='green', fg='white', font=10)
+        self.loadSongs = tk.Button(self.controls, bg='red', fg='white', font=10)
         self.loadSongs['text'] = 'Load Songs'
         self.loadSongs['command'] = self.retrieve_songs
         self.loadSongs.grid(row=0, column=0, padx=10)
@@ -86,7 +86,7 @@ class Player(tk.Frame):
         self.next.grid(row=0, column=3)
 
         self.volume = tk.DoubleVar(self)
-        self.slider = tk.Scale(self.controls, from_=0, to=10, orient=tk.HORIZONTAL)
+        self.slider = tk.Scale(self.controls, from_=0, to=10, orient=tk.HORIZONTAL, troughcolor='green2')
         self.slider['variable'] = self.volume
         self.slider.set(8)
         mixer.music.set_volume(0.8)
@@ -191,48 +191,51 @@ def main():
     def inplayer():
 
         root = tk.Tk()
+        # root.configure(bg='black')
         root.geometry('600x400')
-        root.wm_title('Musicxy')
+        root.wm_title('Vison Audio')
         app = Player(master=root)
         app.mainloop()
+    inplayer()
 
 
+    #
+    #
+    # #getting Predictions
+    # def inpredict():
 
-
-    #getting Predictions
-    def inpredict():
-        ptime = 0
-        ctime = 0
-        cap = cv2.VideoCapture(0)
-        # HandTrack= HandTrackModule.handDetector(detectionCon=0.6,trackCon=0.7)
-        Modedetector= PlaybackDetector.PlaybackDetector(detectionCon=0.6,trackCon=0.7)
-        while True:
-            ret, img = cap.read()
-            img = cv2.flip(img, 1)
-
-
-            # cv2.flip(img,0)
-            if ret == False:
-                break
-
-            Modedetector.detectionMode(img)
-            ctime = time.time()
-            fps = 1 / (ctime - ptime)
-            ptime = ctime
-
-            cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_ITALIC, 3, (255, 0, 255), 2)
-
-            cv2.imshow("Hand", img)
-            k = cv2.waitKey(1)
-
-            if k == 27:
-                break
-
-        cv2.destroyAllWindows()
-
-
-    threading.Thread(target=inplayer).start()
-    threading.Thread(target=inpredict).start()
+    #     ptime = 0
+    #     ctime = 0
+    #     cap = cv2.VideoCapture(0)
+    #     # HandTrack= HandTrackModule.handDetector(detectionCon=0.6,trackCon=0.7)
+    #     Modedetector= PlaybackDetector.PlaybackDetector(detectionCon=0.6,trackCon=0.7)
+    #     while True:
+    #         ret, img = cap.read()
+    #         img = cv2.flip(img, 1)
+    #
+    #
+    #         # cv2.flip(img,0)
+    #         if ret == False:
+    #             break
+    #
+    #         Modedetector.detectionMode(img)
+    #         ctime = time.time()
+    #         fps = 1 / (ctime - ptime)
+    #         ptime = ctime
+    #
+    #         cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_ITALIC, 3, (255, 0, 255), 2)
+    #
+    #         cv2.imshow("Hand", img)
+    #         k = cv2.waitKey(1)
+    #
+    #         if k == 27:
+    #             break
+    #
+    #     cv2.destroyAllWindows()
+    #
+    #
+    # threading.Thread(target=inplayer).start()
+    # threading.Thread(target=inpredict).start()
 
 if __name__ == '__main__':
     main()
