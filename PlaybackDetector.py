@@ -16,7 +16,6 @@ class PlaybackDetector():
         self.volmmode=False
         self.changeTrackMode=False
         self.changeTrackFlag=False
-        self.trackChangeCount=0
 
         #Intialize Player: Thread1
         def inplayer():
@@ -28,28 +27,27 @@ class PlaybackDetector():
 
         # getting Predictions: Thread2
         def inpredict():
-            self.ptime = 0
-            self.ctime = 0
-            self.cap = cv2.VideoCapture(0)
+            ptime = 0
+            cap = cv2.VideoCapture(0)
 
             while True:
-                self.ret, self.img = self.cap.read()
+                ret, self.img = cap.read()
                 self.img = cv2.flip(self.img, 1)
-                if self.ret == False:
+                if ret == False:
                     break
 
                 #Calculate FrameRate
-                self.detectionMode(self.img)
+                self.detect(self.img)
                 self.ctime = time.time()
-                self.fps = 1 / (self.ctime - self.ptime)
-                self.ptime = self.ctime
-                cv2.putText(self.img, str(int(self.fps)), (10, 70), cv2.FONT_ITALIC, 3, (255, 0, 255), 2)
+                fps = 1 / (self.ctime - ptime)
+                ptime = self.ctime
+                cv2.putText(self.img, str(int(fps)), (10, 70), cv2.FONT_ITALIC, 3, (255, 0, 255), 2)
 
                 #Displaying Predictions
                 cv2.imshow("Hand", self.img)
-                self.k = cv2.waitKey(1)
+                k = cv2.waitKey(1)
 
-                if self.k == 27:
+                if k == 27:
                     break
 
             cv2.destroyAllWindows()
@@ -58,7 +56,7 @@ class PlaybackDetector():
         threading.Thread(target=inplayer).start()
         threading.Thread(target=inpredict).start()
 
-    def detectionMode(self,img):
+    def detect(self,img):
         self.prevmode=self.mode
         self.handDetector.findHands(img)
         self.lmlist=self.handDetector.findPosition(img)
@@ -74,7 +72,7 @@ class PlaybackDetector():
             else:
                 self.changeTrackMode=False
                 self.volmmode = False
-                self.trackChangeCount=0
+                self.changeTrackFlag=False
 
             #For PlayPause
             if self.fingerlist == [1, 1, 1, 1, 1]:
@@ -107,12 +105,12 @@ class PlaybackDetector():
         self.timeMode[round(float(time.time()),1)]= self.lmlist[8][1]
         try:
             if len(self.timeMode)> 10:
-                if self.lmlist[8][1]< self.timeMode[round(float(time.time()),1)-1]-150 and self.trackChangeCount==0:
+                if self.lmlist[8][1]< self.timeMode[round(float(time.time()),1)-1]-150 and self.changeTrackFlag==False:
                     self.app.prev_song()
-                    self.trackChangeCount += 1
-                elif self.lmlist[8][1]> self.timeMode[round(float(time.time()),1)-1]+150 and self.trackChangeCount==0:
+                    self.changeTrackFlag=True
+                elif self.lmlist[8][1]> self.timeMode[round(float(time.time()),1)-1]+150 and self.changeTrackFlag==False:
                     self.app.next_song()
-                    self.trackChangeCount += 1
+                    self.changeTrackFlag =True
         except Exception as e:
             pass
 
