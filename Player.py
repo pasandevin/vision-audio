@@ -1,19 +1,12 @@
-# Visit pyGuru on youtube
-# pip install pygame
-
 import os
 import pickle
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import PhotoImage
 from pygame import mixer
-
-#for prediction part
 import cv2
 import time
 import PlaybackDetector
-
-#for multithreading
 import threading
 
 
