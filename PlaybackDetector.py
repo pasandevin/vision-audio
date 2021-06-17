@@ -174,14 +174,17 @@ class PlaybackDetector():
 
 
     def changeTrack(self):
+        print("Change Track")
         self.timeMode[round(float(time.time()),1)]= self.lmlist[4][2]
         try:
 
-            if self.lmlist[4][2]>= self.timeMode[round(float(time.time()),1)-3]+100:
-                print("HI")
+            if self.lmlist[4][2]>= self.timeMode[round(float(time.time()),1)-3]-80:
+                print("Prev")
             # print("changeTrack")
+            elif self.lmlist[4][2]>= self.timeMode[round(float(time.time()),1)-3]+80:
+                print("Next")
         except Exception as e:
-            pass
+            print("didn't work")
             # print(e)
         # print("changeTrack")
 
