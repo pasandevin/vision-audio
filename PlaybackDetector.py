@@ -96,8 +96,10 @@ class PlaybackDetector():
         self.handDetector.findHands(img)
         self.lmlist=self.handDetector.findPosition(img)
 
+
         if len(self.lmlist) != 0:
             self.idexfingerpos = self.lmlist[8]
+            # print(self.idexfingerpos)
             # self.timeMode[int(self.ctime)]=self.idexfingerpos
         # print(self.timeMode)
         # print('-----------------------')
@@ -174,17 +176,24 @@ class PlaybackDetector():
 
 
     def changeTrack(self):
-        print("Change Track")
-        self.timeMode[round(float(time.time()),1)]= self.lmlist[4][2]
+        # print("Change Track")
+        self.timeMode[round(float(time.time()),1)]= self.lmlist[8][2]
         try:
+            if len(self.timeMode)> 10:
 
-            if self.lmlist[4][2]>= self.timeMode[round(float(time.time()),1)-3]-80:
-                print("Prev")
-            # print("changeTrack")
-            elif self.lmlist[4][2]>= self.timeMode[round(float(time.time()),1)-3]+80:
-                print("Next")
+
+                if self.lmlist[8][1]< self.timeMode[round(float(time.time()),1)-1]+150:
+                    # pass
+                    print(str(self.lmlist[8][1]) +"<"+str(self.timeMode[round(float(time.time()),1)-1]+150)  )
+                    # print("Prev")
+                # print("changeTrack")
+                elif self.lmlist[8][1]> self.timeMode[round(float(time.time()),1)-1]-150:
+                    pass
+                    # print("Next")
+            # print("don't work")
         except Exception as e:
-            print("didn't work")
+            pass
+            # print("No match")
             # print(e)
         # print("changeTrack")
 
