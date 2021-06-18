@@ -31,6 +31,7 @@ class handDetector():
                 h, w, c = img.shape
                 cx, cy = int(lm.x * w), int(lm.y * h)
                 self.lmList.append([id,cx,cy])
+                cv2.circle(img,(cx,cy),4,(255,0,0),-1)
         return self.lmList
 
     def countTheFingersUp(self,img):

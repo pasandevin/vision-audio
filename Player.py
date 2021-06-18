@@ -182,60 +182,16 @@ class Player(tk.Frame):
     def change_volume_vision(self,vol, event=None):
         mixer.music.set_volume(vol / 10)
         self.slider.set(vol)
-        # self.volume=
 
 
-# ----------------------------- Main -------------------------------------------
+
 def main():
-
-    def inplayer():
-
-        root = tk.Tk()
-        # root.configure(bg='black')
-        root.geometry('600x400')
-        root.wm_title('Vison Audio')
-        app = Player(master=root)
-        app.mainloop()
-    inplayer()
-
-
-    #
-    #
-    # #getting Predictions
-    # def inpredict():
-
-    #     ptime = 0
-    #     ctime = 0
-    #     cap = cv2.VideoCapture(0)
-    #     # HandTrack= HandTrackModule.handDetector(detectionCon=0.6,trackCon=0.7)
-    #     Modedetector= PlaybackDetector.PlaybackDetector(detectionCon=0.6,trackCon=0.7)
-    #     while True:
-    #         ret, img = cap.read()
-    #         img = cv2.flip(img, 1)
-    #
-    #
-    #         # cv2.flip(img,0)
-    #         if ret == False:
-    #             break
-    #
-    #         Modedetector.detectionMode(img)
-    #         ctime = time.time()
-    #         fps = 1 / (ctime - ptime)
-    #         ptime = ctime
-    #
-    #         cv2.putText(img, str(int(fps)), (10, 70), cv2.FONT_ITALIC, 3, (255, 0, 255), 2)
-    #
-    #         cv2.imshow("Hand", img)
-    #         k = cv2.waitKey(1)
-    #
-    #         if k == 27:
-    #             break
-    #
-    #     cv2.destroyAllWindows()
-    #
-    #
-    # threading.Thread(target=inplayer).start()
-    # threading.Thread(target=inpredict).start()
+    root = tk.Tk()
+    # root.configure(bg='black')
+    root.geometry('600x400')
+    root.wm_title('Vison Audio')
+    app = Player(master=root)
+    app.mainloop()
 
 if __name__ == '__main__':
     main()
