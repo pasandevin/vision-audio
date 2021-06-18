@@ -41,7 +41,7 @@ python main.py
 ***Step3:** Run "main.py" file*</br></br>
 
 
-# How	to	play	with	Vision	Audio?
+# Want to play? Here's how...
 
 
 
@@ -67,7 +67,7 @@ python main.py
 
 
 *The songs are already loaded but you can add a folder using **load songs** button. The player will load all the mp3 files in a given folder.*</br>
-***Have Fun*** :smiley:
+***Have Fun*** :smiley:</br>
 
 -Thank you
 
