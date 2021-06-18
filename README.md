@@ -63,7 +63,8 @@ python main.py
 </br></br></br></br></br>
 
 ### To play the next track  ->   *Raise all the fingers except your thumb and move them to the right*</br></br>
-![Play_next](https://user-images.githubusercontent.com/60750424/122572022-f9251580-d06a-11eb-8fb3-3ff2d4b5c64a.gif)
+![Play_next](https://user-images.githubusercontent.com/60750424/122588921-47dbab00-d07d-11eb-8715-a8c1afe41516.gif)
+
 
 *The songs are already loaded but you can add a folder using **load songs** button. The player will load all the mp3 files in a given folder.*</br>
 ***Have Fun*** :smiley:
