@@ -43,7 +43,7 @@ python main.py
 
 # How	to	play	with	Vision	Audio?
 
-The songs are already loaded but you can add a folder using *load songs* button. The player will load all the mp3 files in a given folder.
+
 
 ### To Start/continue  ->   *Raise all five fingers*</br></br>
 ![play_ex](https://user-images.githubusercontent.com/60750424/122570201-24a70080-d069-11eb-9f4c-c9243ac30ebe.PNG)</br></br></br></br></br>
@@ -59,10 +59,15 @@ The songs are already loaded but you can add a folder using *load songs* button.
 
 
 ### To play the previous track  ->   *Raise all the fingers except your thumb and move them to the left*</br></br>
-![Play_prev](https://user-images.githubusercontent.com/60750424/122571972-eca0bd00-d06a-11eb-981a-187f5c512aa0.png)</br></br></br></br></br>
+![Play_prev](https://user-images.githubusercontent.com/60750424/122573348-52da0f80-d06c-11eb-8711-20f4ff56756a.gif)
+</br></br></br></br></br>
 
 ### To play the next track  ->   *Raise all the fingers except your thumb and move them to the right*</br></br>
 ![Play_next](https://user-images.githubusercontent.com/60750424/122572022-f9251580-d06a-11eb-8fb3-3ff2d4b5c64a.gif)
+
+*The songs are already loaded but you can add a folder using **load songs** button. The player will load all the mp3 files in a given folder.*
+
+-Thank you
 
 
 
