@@ -138,7 +138,7 @@ class PlaybackDetector():
 
         dist = math.hypot(x2 - x1, y2 - y1)
         lowerdist=50
-        maxdist=280
+        maxdist=230
         vol=np.interp(dist,[lowerdist,maxdist],[0,10])
         self.app.change_volume_vision(vol)
 

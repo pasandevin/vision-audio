@@ -44,7 +44,7 @@ class Player(tk.Frame):
         self.track.config(width=410, height=300)
         self.track.grid(row=0, column=0, padx=10)
 
-        self.tracklist = tk.LabelFrame(self, text=f'PlayList - {str(len(self.playlist))}',
+        self.tracklist = tk.LabelFrame(self, text='Playlist',
                                        font=("times new roman", 15, "bold"),
                                        bg="green2", fg="white", bd=5, relief=tk.GROOVE)
         self.tracklist.config(width=190, height=400)
