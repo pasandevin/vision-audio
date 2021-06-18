@@ -1,5 +1,5 @@
 # What	is	Vision	Audio?</br>
-A gesture-controlled audio player built for the purpose of demonstrating the capabilities of computer vision. The program is built with python programming language with the help of several external libraries used for image processing & computer vision.
+A hand gesture controlled audio player built for the purpose of demonstrating the capabilities of computer vision. The program is built with python programming language with the help of several external libraries used for image processing & computer vision.
 </br></br>
 
 
@@ -49,7 +49,7 @@ python main.py
 ![play_ex](https://user-images.githubusercontent.com/60750424/122570201-24a70080-d069-11eb-9f4c-c9243ac30ebe.PNG)</br></br></br></br></br>
 
 
-### To pause:  ->   *all the fingers*</br></br>
+### To pause:  ->   *lower all five fingers*</br></br>
 ![paused_ex](https://user-images.githubusercontent.com/60750424/122570250-31c3ef80-d069-11eb-84ec-b452c4af8dd9.PNG)</br></br></br></br></br>
 
 ### To change the volume  ->   *Raise your thumb and index finger and adjust the distance between them*</br></br>
