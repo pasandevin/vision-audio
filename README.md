@@ -1,5 +1,5 @@
 # What	is	Vision	Audio?</br>
-A hand gesture controlled audio player built for the purpose of demonstrating the capabilities of computer vision. The program is built with python programming language with the help of several external libraries used for image processing & computer vision.
+***Vision Audio*** is a hand gesture controlled audio player built with python programming language and several computer vision related modules including *mediapipe* and *openCV*.
 </br></br>
 
 
