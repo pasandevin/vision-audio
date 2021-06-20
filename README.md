@@ -52,7 +52,7 @@ python main.py
 ### To pause:  ->   *lower all five fingers*</br></br>
 ![paused_ex](https://user-images.githubusercontent.com/60750424/122570250-31c3ef80-d069-11eb-84ec-b452c4af8dd9.PNG)</br></br></br></br></br>
 
-### To change the volume  ->   *Raise your thumb and index finger and adjust the distance between them*</br></br>
+### To change the volume  ->   *First Raise your thumb and index finger. Then adjust the distance between them*</br></br>
 ![Change_volume_ex](https://user-images.githubusercontent.com/60750424/122570293-3d171b00-d069-11eb-8a76-b376ae2c27b8.PNG)</br></br></br></br></br>
 
 
