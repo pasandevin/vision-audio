@@ -1,11 +1,11 @@
-# What	is	Vision	Audio?</br>
+# What	is	Vision	Audio?:bulb:</br>
 ***Vision Audio*** is a hand gesture controlled audio player built with python programming language and several computer vision related modules including *mediapipe* and *openCV*.
 </br></br>
 
 
 
 
-# How	to	Configure?
+# How	to	Configure?:hammer:
 ### 1.Anaconda environment</br></br>
 ***Step1:** Clone the repo*</br></br>
 
@@ -41,7 +41,7 @@ python main.py
 ***Step3:** Run "main.py" file*</br></br>
 
 
-# Want to play? Here's how...
+# Want to play? Here's how...:stuck_out_tongue_winking_eye:
 
 
 
